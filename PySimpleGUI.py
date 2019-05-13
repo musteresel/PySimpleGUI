@@ -2029,7 +2029,6 @@ class Graph(Element):
         self.DragSubmits = drag_submits
         self.ClickPosition = (None, None)
         self.MouseButtonDown = False
-        self.Images = []
         self.RightClickMenu = right_click_menu
 
         super().__init__(ELEM_TYPE_GRAPH, background_color=background_color, size=canvas_size, pad=pad, key=key,
@@ -2184,7 +2183,6 @@ class Graph(Element):
             print('*** WARNING - The Graph element has not been finalized and cannot be drawn upon ***')
             print('Call Window.Finalize() prior to this operation')
             return None
-        self.Images.append(image)
         try:  # in case closed with X
             id = self._TKCanvas2.create_image(converted_point, image=image, anchor=tk.NW)
         except:
